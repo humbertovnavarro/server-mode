@@ -17,6 +17,13 @@ fn main() {
         "desktop" => {
             start_services(desktop_services);
             stop_services(server_services);
+            match Command::new("bash")
+            .arg("application")
+            .spawn() {
+                Ok(_) => {
+                }
+                Err(err) => println!("{:?}", err)
+            }
         },
         "server" => {
             stop_services(desktop_services);
@@ -51,7 +58,6 @@ fn start_services(services: Vec<String>) {
         }
     }
 }
-
 
 fn help() {
     println!("available options are desktop and server")

@@ -1,0 +1,12 @@
+[
+    "electron",
+    "firefox",
+    "code",
+    "chromium",
+    "wireplumber",
+    "Xwayland",
+    "kwin_wayland",
+    "pipewire",
+    "pipewire-pulese",
+    "plasmashell"
+]
