@@ -22,7 +22,7 @@ fn main() {
             stop_services(desktop_services);
             start_services(server_services);
             match Command::new("bash")
-            .arg("application")
+            .arg("/etc/server-mode/logout.bash")
             .spawn() {
                 Ok(_) => {
                 }
