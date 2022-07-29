@@ -17,6 +17,10 @@ fn main() {
         "desktop" => {
             start_services(desktop_services);
             stop_services(server_services);
+        },
+        "server" => {
+            stop_services(desktop_services);
+            start_services(server_services);
             match Command::new("bash")
             .arg("application")
             .spawn() {
@@ -24,10 +28,6 @@ fn main() {
                 }
                 Err(err) => println!("{:?}", err)
             }
-        },
-        "server" => {
-            stop_services(desktop_services);
-            start_services(server_services);
         }
         &_ => help(),
     }
